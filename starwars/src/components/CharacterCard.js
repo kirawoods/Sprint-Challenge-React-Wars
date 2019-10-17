@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-} from "reactstrap";
+import "./CharacterCard.css"
 
-export const CharacterCard = () => {
+export const CharacterCard = props => {
     const [cardInfo, setCardInfo] = useState([]);
-  
     useEffect(() => {
       axios
         .get('https://swapi.co/api/people/')
@@ -23,15 +15,10 @@ export const CharacterCard = () => {
           console.log(error);
         });
     }, []);
-    // return (
-    //   <Card>
-    //     <CardImg src={image.hdurl} />
-    //     <CardBody>
-    //       <CardTitle>{image.title}</CardTitle>
-    //       <CardSubtitle>{image.date}</CardSubtitle>
-    //       <CardText>{image.explanation}</CardText>
-    //     </CardBody>
-    //   </Card>
-    // );
+    return (
+      <div class="card-container">
+          <h3>Character Name</h3>
+      </div>
+    );
   };
   
