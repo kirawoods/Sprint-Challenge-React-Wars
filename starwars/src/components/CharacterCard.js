@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CharacterCard.css"
+import { Card } from "@blueprintjs/core";
 
 export const CharacterCard = props => {
     const [cardInfo, setCardInfo] = useState([]);
     useEffect(() => {
       axios
-        .get('https://swapi.co/api/people/')
+        .get('https://swapi.co/api/people/1')
         .then(response => {
-          const peopleObject = response;
+          const peopleObject = response.data;
           console.log(peopleObject);
+          setCardInfo(peopleObject);
         })
         .catch(error => {
           console.log(error);
         });
     }, []);
     return (
-      <div class="card-container">
-          <h3>Character Name</h3>
-      </div>
-    );
+        <Card>
+            <h3>{cardInfo.name}</h3>
+            <p>Gender: {cardInfo.gender}</p>
+            <p>Hair Color: {cardInfo.hair_color}</p>
+            <p>Height: {cardInfo.height}</p>
+            <p>Mass: {cardInfo.mass}</p>
+        </Card>
+      );
   };
   

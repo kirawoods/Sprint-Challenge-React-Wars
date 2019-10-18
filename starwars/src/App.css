@@ -1,3 +1,8 @@
+@import "../node_modules/@blueprintjs/core/lib/css/blueprint.css";
+@import "../node_modules/normalize.css/normalize.css";
+@import "../node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+
 .App {
   text-align: center;
 }
@@ -6,3 +11,4 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+
