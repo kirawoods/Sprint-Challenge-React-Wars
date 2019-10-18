@@ -2,7 +2,6 @@
 @import "../node_modules/normalize.css/normalize.css";
 @import "../node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css";
 
-
 .App {
   text-align: center;
 }
@@ -12,3 +11,10 @@
 }
 /* write your parent styles in here for your App.js */
 
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
